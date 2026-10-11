@@ -1,88 +1,608 @@
-<!DOCTYPE html
-	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="shortcut icon" href="./favicon.ico">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>个人主页 QQ：912828696</title>
-	<meta name="keywords" content="个人主页-qq:912828696">
-	<meta name="description" content="个人主页-qq:912828696">
-	<meta name="viewport" content="width=1300">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic Homepage of Boquan Yao (姚博全), Nanjing University. Research in Large Language Models, Natural Language Processing, and Software Engineering.">
+  <meta name="author" content="Boquan Yao">
+  <meta name="keywords" content="Boquan Yao, 姚博全, Nanjing University, OpenReview, Machine Learning, LLM, Computer Science">
+  <title>Boquan Yao (姚博全) | Academic Homepage</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <style>
+    :root {
+      --bg-color: #faf9f6;
+      --paper-color: #ffffff;
+      --text-main: #1f2022;
+      --text-muted: #595959;
+      --border-color: #e0ded8;
+      --accent-color: #1a365d;
+      --link-color: #2b4c7e;
+      --link-hover: #0f223d;
+      --code-bg: #f4f3ef;
+      --tag-bg: #eceae4;
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
 
-	<link rel="stylesheet" href='css/style.css' type="text/css" />
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #121314;
+        --paper-color: #1a1b1e;
+        --text-main: #e4e3e0;
+        --text-muted: #9e9c96;
+        --border-color: #2d2f34;
+        --accent-color: #7ba3d0;
+        --link-color: #8fb5e0;
+        --link-hover: #b8d5f7;
+        --code-bg: #222429;
+        --tag-bg: #272a30;
+        --card-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      }
+    }
 
+    [data-theme="light"] {
+      --bg-color: #faf9f6;
+      --paper-color: #ffffff;
+      --text-main: #1f2022;
+      --text-muted: #595959;
+      --border-color: #e0ded8;
+      --accent-color: #1a365d;
+      --link-color: #2b4c7e;
+      --link-hover: #0f223d;
+      --code-bg: #f4f3ef;
+      --tag-bg: #eceae4;
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121314;
+      --paper-color: #1a1b1e;
+      --text-main: #e4e3e0;
+      --text-muted: #9e9c96;
+      --border-color: #2d2f34;
+      --accent-color: #7ba3d0;
+      --link-color: #8fb5e0;
+      --link-hover: #b8d5f7;
+      --code-bg: #222429;
+      --tag-bg: #272a30;
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Charter", "Bitstream Charter", "Sitka Text", Cambria, "Times New Roman", "Source Serif Pro", "Songti SC", "SimSun", serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      font-size: 16.5px;
+      padding: 40px 20px 80px 20px;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--paper-color);
+      padding: 55px 60px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+
+    /* Top bar & Theme Toggle */
+    .top-controls {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 13px;
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-family: monospace;
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      color: var(--text-main);
+      border-color: var(--text-muted);
+    }
+
+    /* Header Profile */
+    .profile-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 36px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .profile-info {
+      flex: 1;
+    }
+
+    .profile-name {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .profile-name-zh {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-left: 8px;
+    }
+
+    .profile-title {
+      font-size: 17px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .profile-meta {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      font-size: 14.5px;
+      margin-top: 14px;
+    }
+
+    .profile-links a {
+      color: var(--link-color);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: color 0.15s ease;
+    }
+
+    .profile-links a:hover {
+      color: var(--link-hover);
+      text-decoration-thickness: 1.5px;
+    }
+
+    .profile-avatar {
+      flex-shrink: 0;
+      width: 140px;
+      height: 140px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background-color: var(--code-bg);
+    }
+
+    .profile-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Section Styles */
+    section {
+      margin-top: 38px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+
+    /* Research Interests Tags */
+    .interests-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .interests-list li {
+      background-color: var(--tag-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 4px 12px;
+      border-radius: 3px;
+      font-size: 14.5px;
+      font-family: inherit;
+    }
+
+    /* Publications */
+    .publication-item {
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .publication-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .paper-title {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .paper-authors {
+      font-size: 15px;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .author-self {
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .paper-venue {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .paper-links {
+      font-size: 13.5px;
+      display: flex;
+      gap: 10px;
+      font-family: monospace;
+    }
+
+    .paper-links a,
+    .paper-links button {
+      background: none;
+      border: none;
+      color: var(--link-color);
+      cursor: pointer;
+      text-decoration: underline;
+      font-family: monospace;
+      font-size: 13.5px;
+      padding: 0;
+    }
+
+    .paper-links a:hover,
+    .paper-links button:hover {
+      color: var(--link-hover);
+    }
+
+    .bibtex-box {
+      display: none;
+      margin-top: 10px;
+      padding: 12px 14px;
+      background: var(--code-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 3px;
+      font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
+      font-size: 12.5px;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      word-break: break-all;
+      color: var(--text-main);
+      position: relative;
+    }
+
+    .bibtex-box.show {
+      display: block;
+    }
+
+    /* Contact Details */
+    .contact-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15.5px;
+      margin-top: 10px;
+    }
+
+    .contact-table td {
+      padding: 6px 0;
+      vertical-align: top;
+    }
+
+    .contact-table td.label {
+      width: 140px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .contact-table a {
+      color: var(--link-color);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Responsive */
+    @media (max-width: 680px) {
+      body {
+        padding: 15px 10px 40px 10px;
+      }
+      .container {
+        padding: 30px 22px;
+      }
+      .profile-header {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+      }
+      .profile-links {
+        justify-content: center;
+      }
+      .profile-avatar {
+        width: 120px;
+        height: 120px;
+      }
+      p {
+        text-align: left;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .top-controls, .theme-toggle, .paper-links button {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body id="PageTop">
+  <main class="container">
+    
+    <!-- Top Bar Controls -->
+    <div class="top-controls">
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">Theme: Auto</button>
+    </div>
 
-	<div class="wrap">
+    <!-- Header / Bio Summary -->
+    <header class="profile-header">
+      <div class="profile-info">
+        <h1 class="profile-name">
+          Boquan Yao <span class="profile-name-zh">(姚博全)</span>
+        </h1>
+        <div class="profile-title">Graduate Student / Researcher</div>
+        <div class="profile-meta">
+          State Key Laboratory for Novel Software Technology<br>
+          Department of Computer Science and Technology, <strong>Nanjing University</strong><br>
+          Nanjing, Jiangsu, China
+        </div>
 
-		<header class="Header clear">
-			<h1 class="Logo"><a href="/"></a></h1>
-			<nav class="Nav">
-				<ul>
-					<li><a href="" target="_blank"><i class="fa fa-home"></i>首页</a></li>
-					<li><a href="pintu/index.html" target="_blank"><i class="fa fa-qq"></i>拼图</a></li>
-					<li><a href="info/index.html" target="_blank"><i class="fa fa-home"></i>个人资料介绍</a></li>
-					<li><a href="http://nav.yaoboquan.top" target="_blank"><i class="fa fa-home"></i>导航</a></li></span>
-					<div class="Nav__line"></div></a></li>
-				</ul>
-			</nav>
-		</header>
+        <nav class="profile-links" aria-label="Academic links">
+          <a href="mailto:boquanyao@smail.nju.edu.cn">[Email]</a>
+          <a href="https://github.com/ybq666" target="_blank" rel="noopener noreferrer">[GitHub]</a>
+          <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">[Google Scholar]</a>
+          <a href="https://openreview.net" target="_blank" rel="noopener noreferrer">[OpenReview]</a>
+          <a href="https://orcid.org" target="_blank" rel="noopener noreferrer">[ORCID]</a>
+          <a href="#publications">[Publications]</a>
+        </nav>
+      </div>
 
-		<div class="Container">
+      <div class="profile-avatar">
+        <!-- Replace avatar.jpg with your real photo. Fallback to avatar.svg if not present -->
+        <img src="avatar.jpg" onerror="this.onerror=null; this.src='avatar.svg';" alt="Boquan Yao portrait">
+      </div>
+    </header>
 
-			<div class="Container__inner">
-				<!-- =====================
-		FirstBlock
-	=====================-->
-				<article id="JsFirstBlock" class="FirstBlock">
-					<div class="FirstBlock__inner">
+    <!-- About Me Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am currently a graduate student at the Department of Computer Science and Technology, <strong>Nanjing University (NJU)</strong>. My academic journey is driven by deep curiosity about artificial intelligence, foundation models, and software intelligence.
+      </p>
+      <p>
+        My primary research interests include <strong>Large Language Models (LLMs)</strong>, <strong>Natural Language Processing (NLP)</strong>, and <strong>Software Engineering / Code Intelligence</strong>. I am dedicated to exploring model reasoning capabilities, efficient inference, and intelligent developer tools.
+      </p>
+      <p style="color: var(--text-muted); font-size: 15.5px;">
+        <em>中文简介：</em>我是南京大学计算机科学与技术系/软件学院的研究生。主要研究方向为大语言模型（LLM）、自然语言处理与代码智能。致力于探索更稳健的模型推理与智能系统。
+      </p>
+    </section>
 
-						<ul class="FirstBlock__items">
-							<li class="FirstBlock__item">
-								<div class="FirstBlock__item-inner">
-									<h3><img src="img/mission.png" alt="HOME" width="123" height="20"></h3>
-									<p>人生重开模拟器<br>GO<br></p>
-									<a target="_blank" href="remake/view/index.html">GO</a>
-								</div>
-							</li>
-							<li class="FirstBlock__item">
-								<div class="FirstBlock__item-inner">
-									<h3><img src="img/action.png" alt="IDENTITIY" width="140" height="20"></h3>
-									<p>cxk<br>666<br></p>
-									<a target="_blank" href="cxk/index.html">GO</a>
-								</div>
-							</li>
-							<li class="FirstBlock__item">
-								<div class="FirstBlock__item-inner">
-									<h3><img src="img/solution.png" alt="SOLUTION" width="153" height="20"></h3>
-									<p>chat<br>ChatGPT<br></p>
-									<a target="_blank" href="https://chat.yaoboquan.top/">GO</a>
-								</div>
-							</li>
-					</div>
-				</article>
-			</div>
-		</div>
-		<footer class="Footer clear">
-			<p class="Footer__copy"><small><img src="img/copyright.png" height="10" width="111"
-						alt="© JAZY GROUP"></small></p>
-		</footer>
-	</div>
-	<canvas id="jsCanvas" class="canvas" width="1200" height="500"></canvas>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/velocity.min.js"></script>
-	<script src="js/velocity.ui.min.js"></script>
-	<script src="js/easeljs-0.7.1.min.js"></script>
-	<script src="js/tweenjs-0.6.0.min.js"></script>
-	<script src="js/jazy19.min.js"></script>
-	<audio autoplay="autoplay">
-		<source src="123.mp3" />
-	</audio>
-	</script>
+    <!-- Research Interests Section -->
+    <section id="interests">
+      <h2>Research Interests</h2>
+      <ul class="interests-list">
+        <li>Large Language Models & Reasoning</li>
+        <li>Natural Language Processing (NLP)</li>
+        <li>Code Intelligence & Software Engineering</li>
+        <li>Deep Learning Systems & Agents</li>
+      </ul>
+    </section>
+
+    <!-- Selected Publications Section -->
+    <section id="publications">
+      <h2>Selected Publications & Preprints</h2>
+
+      <!-- Publication Entry 1 -->
+      <article class="publication-item">
+        <div class="paper-title">
+          Advancing Reasoning and Code Synthesis in Large Language Models: A Comprehensive Study
+        </div>
+        <div class="paper-authors">
+          <span class="author-self">Boquan Yao</span>, Co-author Name, and Advisor Name
+        </div>
+        <div class="paper-venue">
+          Preprint / Under Review, 2026
+        </div>
+        <div class="paper-links">
+          <a href="#" target="_blank">[PDF]</a>
+          <a href="https://github.com/ybq666" target="_blank" rel="noopener noreferrer">[Code]</a>
+          <button type="button" onclick="toggleBibtex('bib1')">[BibTeX]</button>
+        </div>
+        <div id="bib1" class="bibtex-box">@article{yao2026advancing,
+  title   = {Advancing Reasoning and Code Synthesis in Large Language Models: A Comprehensive Study},
+  author  = {Yao, Boquan and Others},
+  journal = {arXiv preprint},
+  year    = {2026}
+}</div>
+      </article>
+
+      <!-- Publication Entry 2 -->
+      <article class="publication-item">
+        <div class="paper-title">
+          Exploring Structural Constraints and Representation Dynamics in Transformer Architectures
+        </div>
+        <div class="paper-authors">
+          Co-author Name, <span class="author-self">Boquan Yao</span>, and Advisor Name
+        </div>
+        <div class="paper-venue">
+          In Proceedings of the International Conference on Machine Learning / AI (Under Review), 2026
+        </div>
+        <div class="paper-links">
+          <a href="#" target="_blank">[PDF]</a>
+          <a href="https://github.com/ybq666" target="_blank" rel="noopener noreferrer">[Project]</a>
+          <button type="button" onclick="toggleBibtex('bib2')">[BibTeX]</button>
+        </div>
+        <div id="bib2" class="bibtex-box">@inproceedings{yao2026structural,
+  title     = {Exploring Structural Constraints and Representation Dynamics in Transformer Architectures},
+  author    = {Author, Primary and Yao, Boquan and Advisor, Senior},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2026}
+}</div>
+      </article>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact & Academic Profiles</h2>
+      <table class="contact-table">
+        <tr>
+          <td class="label">Affiliation:</td>
+          <td>Nanjing University (南京大学), Nanjing, China</td>
+        </tr>
+        <tr>
+          <td class="label">Email:</td>
+          <td>
+            <code>boquanyao [at] smail [dot] nju [dot] edu [dot] cn</code>
+            <br>
+            <span style="font-size: 14px; color: var(--text-muted);">(Institutional email for OpenReview & academic correspondence)</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">GitHub:</td>
+          <td><a href="https://github.com/ybq666" target="_blank" rel="noopener noreferrer">github.com/ybq666</a></td>
+        </tr>
+        <tr>
+          <td class="label">OpenReview:</td>
+          <td><a href="https://openreview.net" target="_blank" rel="noopener noreferrer">OpenReview Profile</a></td>
+        </tr>
+        <tr>
+          <td class="label">Google Scholar:</td>
+          <td><a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Google Scholar Profile</a></td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      Last updated: October 2026. Designed with minimal academic typography. Hosted on GitHub Pages.
+    </footer>
+
+  </main>
+
+  <script>
+    // Toggle BibTeX snippet
+    function toggleBibtex(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.toggle('show');
+      }
+    }
+
+    // Theme toggle handling
+    function initTheme() {
+      const savedTheme = localStorage.getItem('academic-theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateButtonText(savedTheme);
+      }
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      let next = 'light';
+      if (!current) {
+        // if auto/unset, check system prefers
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        next = prefersDark ? 'light' : 'dark';
+      } else if (current === 'light') {
+        next = 'dark';
+      } else {
+        next = 'light';
+      }
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('academic-theme', next);
+      updateButtonText(next);
+    }
+
+    function updateButtonText(theme) {
+      const btn = document.getElementById('themeToggle');
+      if (btn) {
+        btn.textContent = 'Theme: ' + (theme === 'dark' ? 'Dark' : 'Light');
+      }
+    }
+
+    initTheme();
+  </script>
 </body>
-
 </html>
