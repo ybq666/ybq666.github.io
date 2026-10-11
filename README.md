@@ -17,7 +17,7 @@ Designed specifically for **OpenReview registration**, conference submissions, a
 - 打开 `index.html`：
   - 搜索 `Boquan Yao` 或 `姚博全`：修改中英文姓名。
   - 搜索 `Nanjing University` / `南京大学`：修改为你所在的大学、院系或实验室。
-  - 搜索 `boquanyao@smail.nju.edu.cn`：修改为你在 OpenReview 上注册填写的官方学术邮箱（.edu 邮箱）。
+  - 搜索 `bqyao@smail.nju.edu.cn`：修改为你在 OpenReview 上注册填写的官方学术邮箱（.edu 邮箱）。
 
 ### 3. 添加 / 修改论文与预印本 (Publications)
 - 在 `index.html` 中的 `<section id="publications">` 区块：
