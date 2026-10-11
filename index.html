@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Academic Homepage of Boquan Yao (姚博全), Software Institute, Nanjing University. Research in Large Language Models, Natural Language Processing, and Software Engineering.">
-  <meta name="author" content="Boquan Yao">
-  <meta name="keywords" content="Boquan Yao, 姚博全, Nanjing University, 南京大学软件学院, OpenReview, Machine Learning, LLM, Software Engineering, Computer Science">
-  <title>Boquan Yao (姚博全) | Academic Homepage</title>
+  <meta name="description" content="Academic Homepage of Baiquan Yao, Software Institute, Nanjing University. Research in Large Language Models, Natural Language Processing, and Software Engineering.">
+  <meta name="author" content="Baiquan Yao">
+  <meta name="keywords" content="Baiquan Yao, 姚柏全, Nanjing University, 南京大学软件学院, OpenReview, Machine Learning, LLM, Software Engineering, Computer Science">
+  <title>Baiquan Yao | Academic Homepage</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   
   <style>
@@ -68,6 +68,14 @@
       --card-shadow: 0 1px 3px rgba(0,0,0,0.3);
     }
 
+    /* Language Switcher rules */
+    html[data-lang="en"] .lang-zh {
+      display: none !important;
+    }
+    html[data-lang="zh"] .lang-en {
+      display: none !important;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -95,27 +103,28 @@
       position: relative;
     }
 
-    /* Top bar & Theme Toggle */
+    /* Top bar Controls */
     .top-controls {
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      gap: 10px;
       margin-bottom: 25px;
     }
 
-    .theme-toggle {
-      background: none;
+    .control-btn {
+      background: var(--code-bg);
       border: 1px solid var(--border-color);
       color: var(--text-muted);
       cursor: pointer;
       font-size: 13px;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 3px;
-      font-family: monospace;
+      font-family: inherit;
       transition: all 0.2s ease;
     }
 
-    .theme-toggle:hover {
+    .control-btn:hover {
       color: var(--text-main);
       border-color: var(--text-muted);
     }
@@ -144,17 +153,10 @@
       line-height: 1.2;
     }
 
-    .profile-name-zh {
-      font-size: 20px;
-      font-weight: 500;
-      color: var(--text-muted);
-      margin-left: 8px;
-    }
-
     .profile-title {
       font-size: 17px;
       color: var(--text-muted);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       font-style: italic;
     }
 
@@ -243,90 +245,29 @@
       font-family: inherit;
     }
 
-    /* Publications */
-    .publication-item {
-      margin-bottom: 24px;
-      padding-bottom: 20px;
-      border-bottom: 1px dashed var(--border-color);
-    }
-
-    .publication-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .paper-title {
-      font-size: 16.5px;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 4px;
-      line-height: 1.4;
-    }
-
-    .paper-authors {
-      font-size: 15px;
-      color: var(--text-main);
-      margin-bottom: 4px;
-    }
-
-    .author-self {
-      text-decoration: underline;
-      font-weight: 600;
-    }
-
-    .paper-venue {
-      font-size: 14.5px;
-      color: var(--text-muted);
-      font-style: italic;
-      margin-bottom: 8px;
-    }
-
-    .paper-links {
-      font-size: 13.5px;
-      display: flex;
-      gap: 10px;
-      font-family: monospace;
-    }
-
-    .paper-links a,
-    .paper-links button {
-      background: none;
-      border: none;
-      color: var(--link-color);
-      cursor: pointer;
-      text-decoration: underline;
-      font-family: monospace;
-      font-size: 13.5px;
-      padding: 0;
-    }
-
-    .paper-links a:hover,
-    .paper-links button:hover {
-      color: var(--link-hover);
-    }
-
-    .bibtex-box {
-      display: none;
-      margin-top: 10px;
-      padding: 12px 14px;
+    /* Research in progress notice */
+    .research-notice {
+      padding: 16px 20px;
       background: var(--code-bg);
-      border: 1px solid var(--border-color);
+      border-left: 3px solid var(--border-color);
       border-radius: 3px;
-      font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
-      font-size: 12.5px;
-      line-height: 1.45;
-      white-space: pre-wrap;
-      word-break: break-all;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .research-notice p.status-main {
+      font-style: italic;
       color: var(--text-main);
-      position: relative;
+      margin-bottom: 6px;
     }
 
-    .bibtex-box.show {
-      display: block;
+    .research-notice p.status-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 0;
     }
 
-    /* Contact Details */
+    /* Contact Table */
     .contact-table {
       width: 100%;
       border-collapse: collapse;
@@ -335,12 +276,12 @@
     }
 
     .contact-table td {
-      padding: 6px 0;
+      padding: 8px 0;
       vertical-align: top;
     }
 
     .contact-table td.label {
-      width: 140px;
+      width: 130px;
       color: var(--text-muted);
       font-style: italic;
     }
@@ -348,6 +289,51 @@
     .contact-table a {
       color: var(--link-color);
       text-decoration: underline;
+    }
+
+    /* Email row styling */
+    .email-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .email-link {
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 15.5px;
+      color: var(--link-color);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .copy-btn {
+      background: var(--tag-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-family: monospace;
+      transition: all 0.15s ease;
+    }
+
+    .copy-btn:hover {
+      color: var(--text-main);
+      border-color: var(--text-muted);
+    }
+
+    .copy-btn.copied {
+      background: #2e7d32;
+      color: #ffffff;
+      border-color: #2e7d32;
+    }
+
+    .email-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-top: 4px;
     }
 
     /* Footer */
@@ -385,6 +371,9 @@
       p {
         text-align: left;
       }
+      .contact-table td.label {
+        width: 100px;
+      }
     }
 
     @media print {
@@ -399,7 +388,7 @@
         padding: 0;
         max-width: 100%;
       }
-      .top-controls, .theme-toggle, .paper-links button {
+      .top-controls, .copy-btn {
         display: none !important;
       }
     }
@@ -409,91 +398,179 @@
 
   <main class="container">
     
-    <!-- Top Bar Controls -->
+    <!-- Top Bar Controls: Language & Theme -->
     <div class="top-controls">
-      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">Theme: Auto</button>
+      <button class="control-btn" id="langToggle" onclick="toggleLanguage()" aria-label="Switch Language">
+        <span class="lang-en">中 / EN</span>
+        <span class="lang-zh">EN / 中文</span>
+      </button>
+      <button class="control-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        Theme: Auto
+      </button>
     </div>
 
     <!-- Header / Bio Summary -->
     <header class="profile-header">
       <div class="profile-info">
         <h1 class="profile-name">
-          Boquan Yao <span class="profile-name-zh">(姚博全)</span>
+          <!-- English view: ONLY English name -->
+          <span class="lang-en">Baiquan Yao</span>
+          <!-- Chinese view: Chinese name with English transliteration -->
+          <span class="lang-zh">姚柏全 <small style="font-size: 20px; font-weight: normal; color: var(--text-muted);">(Baiquan Yao)</small></span>
         </h1>
-        <div class="profile-title">Graduate Student / Researcher</div>
+
+        <div class="profile-title">
+          <span class="lang-en">Graduate Student / Researcher</span>
+          <span class="lang-zh">研究生 · 软件智能与大模型方向</span>
+        </div>
+
         <div class="profile-meta">
-          Software Institute, <strong>Nanjing University</strong><br>
-          Nanjing, Jiangsu, China
+          <div class="lang-en">
+            Software Institute, <strong>Nanjing University</strong><br>
+            Nanjing, Jiangsu, China
+          </div>
+          <div class="lang-zh">
+            <strong>南京大学</strong> 软件学院<br>
+            中国 · 江苏 · 南京
+          </div>
         </div>
 
         <nav class="profile-links" aria-label="Academic links">
-          <a href="mailto:bqyao@smail.nju.edu.cn">[Email]</a>
+          <a href="mailto:bqyao@smail.nju.edu.cn">
+            <span class="lang-en">[Email]</span>
+            <span class="lang-zh">[邮箱]</span>
+          </a>
           <a href="https://github.com/ybq666" target="_blank" rel="noopener noreferrer">[GitHub]</a>
           <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">[Google Scholar]</a>
           <a href="https://openreview.net" target="_blank" rel="noopener noreferrer">[OpenReview]</a>
           <a href="https://orcid.org" target="_blank" rel="noopener noreferrer">[ORCID]</a>
-          <a href="#publications">[Research & Papers]</a>
+          <a href="#publications">
+            <span class="lang-en">[Research & Papers]</span>
+            <span class="lang-zh">[学术动态]</span>
+          </a>
         </nav>
       </div>
 
       <div class="profile-avatar">
         <!-- Replace avatar.jpg with your real photo. Fallback to avatar.svg if not present -->
-        <img src="avatar.jpg" onerror="this.onerror=null; this.src='avatar.svg';" alt="Boquan Yao portrait">
+        <img src="avatar.jpg" onerror="this.onerror=null; this.src='avatar.svg';" alt="Baiquan Yao portrait">
       </div>
     </header>
 
     <!-- About Me Section -->
     <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am currently a graduate student at the Software Institute, <strong>Nanjing University (NJU)</strong>. My academic journey is driven by deep curiosity about artificial intelligence, foundation models, and software engineering.
-      </p>
-      <p>
-        My primary research interests include <strong>Large Language Models (LLMs)</strong>, <strong>Natural Language Processing (NLP)</strong>, and <strong>Software Engineering / Code Intelligence</strong>. I am dedicated to exploring model reasoning capabilities, code intelligence, and intelligent developer systems.
-      </p>
-      <p style="color: var(--text-muted); font-size: 15.5px;">
-        <em>中文简介：</em>我是南京大学软件学院的研究生。主要研究方向为大语言模型（LLM）、自然语言处理、代码智能与软件工程。致力于探索更稳健的模型推理与智能系统。
-      </p>
+      <h2>
+        <span class="lang-en">About Me</span>
+        <span class="lang-zh">个人简介</span>
+      </h2>
+
+      <!-- English Bio -->
+      <div class="lang-en">
+        <p>
+          I am currently a graduate student at the Software Institute, <strong>Nanjing University (NJU)</strong>. My academic journey is driven by deep curiosity about artificial intelligence, foundation models, and software engineering.
+        </p>
+        <p>
+          My primary research interests include <strong>Large Language Models (LLMs)</strong>, <strong>Natural Language Processing (NLP)</strong>, and <strong>Software Engineering / Code Intelligence</strong>. I am dedicated to exploring model reasoning capabilities, code intelligence, and intelligent developer systems.
+        </p>
+      </div>
+
+      <!-- Chinese Bio -->
+      <div class="lang-zh">
+        <p>
+          我是<strong>南京大学软件学院</strong>的在读研究生。我的学术兴趣聚焦于人工智能基础模型与前沿软件智能技术。
+        </p>
+        <p>
+          主要研究方向涵盖<strong>大语言模型（LLM）</strong>、<strong>自然语言处理（NLP）</strong>以及<strong>代码智能与软件工程</strong>。致力于探索更稳健的模型推理机制、代码生成与智能化开发者协同系统。
+        </p>
+      </div>
     </section>
 
     <!-- Research Interests Section -->
     <section id="interests">
-      <h2>Research Interests</h2>
+      <h2>
+        <span class="lang-en">Research Interests</span>
+        <span class="lang-zh">研究方向</span>
+      </h2>
       <ul class="interests-list">
-        <li>Large Language Models & Reasoning</li>
-        <li>Natural Language Processing (NLP)</li>
-        <li>Code Intelligence & Software Engineering</li>
-        <li>Deep Learning Systems & Agents</li>
+        <li>
+          <span class="lang-en">Large Language Models & Reasoning</span>
+          <span class="lang-zh">大语言模型与复杂推理</span>
+        </li>
+        <li>
+          <span class="lang-en">Natural Language Processing (NLP)</span>
+          <span class="lang-zh">自然语言处理 (NLP)</span>
+        </li>
+        <li>
+          <span class="lang-en">Code Intelligence & Software Engineering</span>
+          <span class="lang-zh">代码智能与软件工程</span>
+        </li>
+        <li>
+          <span class="lang-en">Deep Learning Systems & Agents</span>
+          <span class="lang-zh">深度学习系统与智能体 (Agents)</span>
+        </li>
       </ul>
     </section>
 
     <!-- Selected Publications Section -->
     <section id="publications">
-      <h2>Publications & Manuscripts</h2>
-      <div style="padding: 16px 20px; background: var(--code-bg); border-left: 3px solid var(--border-color); border-radius: 3px; font-size: 15px; color: var(--text-muted); line-height: 1.6;">
-        <p style="margin-bottom: 6px; font-style: italic; color: var(--text-main);">
-          Currently working on research projects in Large Language Models & Code Intelligence. Manuscripts in preparation.
-        </p>
-        <p style="margin-bottom: 0; font-size: 14px;">
-          <em>研究动态：</em>目前正在开展大语言模型与代码智能相关课题研究，暂无已发表或公开预印本论文，研究成果正在推进与撰写中。
-        </p>
+      <h2>
+        <span class="lang-en">Publications & Manuscripts</span>
+        <span class="lang-zh">学术论文与研究手稿</span>
+      </h2>
+      <div class="research-notice">
+        <div class="lang-en">
+          <p class="status-main">
+            Currently working on research projects in Large Language Models & Code Intelligence. Manuscripts in preparation.
+          </p>
+          <p class="status-sub">
+            (Publications will be updated upon conference submission and preprint release.)
+          </p>
+        </div>
+        <div class="lang-zh">
+          <p class="status-main">
+            目前正在开展大语言模型与代码智能相关课题研究，研究手稿正在推进与撰写中。
+          </p>
+          <p class="status-sub">
+            （成果将在论文录用或公开预印本发布后第一时间更新于此处。）
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-      <h2>Contact & Academic Profiles</h2>
+      <h2>
+        <span class="lang-en">Contact & Academic Profiles</span>
+        <span class="lang-zh">联系方式与学术主页</span>
+      </h2>
       <table class="contact-table">
         <tr>
-          <td class="label">Affiliation:</td>
-          <td>Software Institute, Nanjing University (南京大学软件学院), Nanjing, China</td>
+          <td class="label">
+            <span class="lang-en">Affiliation:</span>
+            <span class="lang-zh">所属机构:</span>
+          </td>
+          <td>
+            <span class="lang-en">Software Institute, Nanjing University, Nanjing, China</span>
+            <span class="lang-zh">南京大学软件学院（中国 · 南京）</span>
+          </td>
         </tr>
         <tr>
-          <td class="label">Email:</td>
+          <td class="label">
+            <span class="lang-en">Email:</span>
+            <span class="lang-zh">电子邮箱:</span>
+          </td>
           <td>
-            <code>bqyao [at] smail [dot] nju [dot] edu [dot] cn</code>
-            <br>
-            <span style="font-size: 14px; color: var(--text-muted);">(Institutional email for OpenReview & academic correspondence)</span>
+            <div class="email-row">
+              <a href="mailto:bqyao@smail.nju.edu.cn" class="email-link">bqyao@smail.nju.edu.cn</a>
+              <button type="button" class="copy-btn" id="copyEmailBtn" onclick="copyEmail(this)" aria-label="Copy Email">
+                <span class="lang-en">Copy</span>
+                <span class="lang-zh">复制</span>
+              </button>
+            </div>
+            <div class="email-desc">
+              <span class="lang-en">Institutional email for OpenReview & academic correspondence</span>
+              <span class="lang-zh">用于 OpenReview 认证及学术交流的机构官方邮箱</span>
+            </div>
           </td>
         </tr>
         <tr>
@@ -502,37 +579,81 @@
         </tr>
         <tr>
           <td class="label">OpenReview:</td>
-          <td><a href="https://openreview.net" target="_blank" rel="noopener noreferrer">OpenReview Profile</a></td>
+          <td>
+            <a href="https://openreview.net" target="_blank" rel="noopener noreferrer">
+              <span class="lang-en">OpenReview Profile</span>
+              <span class="lang-zh">OpenReview 个人档案</span>
+            </a>
+          </td>
         </tr>
         <tr>
           <td class="label">Google Scholar:</td>
-          <td><a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Google Scholar Profile</a></td>
+          <td>
+            <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">
+              <span class="lang-en">Google Scholar Profile</span>
+              <span class="lang-zh">Google 学术档案</span>
+            </a>
+          </td>
         </tr>
       </table>
     </section>
 
     <!-- Footer -->
     <footer>
-      Last updated: October 2026. Designed with minimal academic typography. Hosted on GitHub Pages.
+      <div class="lang-en">
+        Last updated: October 2026. Designed with minimal academic typography. Hosted on GitHub Pages.
+      </div>
+      <div class="lang-zh">
+        最近更新：2026年10月 · 极简学术排版 · 托管于 GitHub Pages
+      </div>
     </footer>
 
   </main>
 
   <script>
-    // Toggle BibTeX snippet
-    function toggleBibtex(id) {
-      const el = document.getElementById(id);
-      if (el) {
-        el.classList.toggle('show');
-      }
+    // Copy email to clipboard
+    function copyEmail(btn) {
+      const email = 'bqyao@smail.nju.edu.cn';
+      navigator.clipboard.writeText(email).then(() => {
+        const isZh = document.documentElement.getAttribute('data-lang') === 'zh';
+        btn.textContent = isZh ? '已复制！' : 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = `<span class="lang-en">Copy</span><span class="lang-zh">复制</span>`;
+          btn.classList.remove('copied');
+        }, 1800);
+      }).catch(() => {
+        // Fallback
+        prompt('Copy email:', email);
+      });
     }
 
-    // Theme toggle handling
+    // Language Toggle Handling
+    function setLanguage(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      localStorage.setItem('academic-lang', lang);
+      document.title = lang === 'zh' 
+        ? '姚柏全 (Baiquan Yao) | 个人学术主页' 
+        : 'Baiquan Yao | Academic Homepage';
+    }
+
+    function toggleLanguage() {
+      const current = document.documentElement.getAttribute('data-lang') || 'en';
+      const next = current === 'en' ? 'zh' : 'en';
+      setLanguage(next);
+    }
+
+    function initLanguage() {
+      const savedLang = localStorage.getItem('academic-lang') || 'en';
+      setLanguage(savedLang);
+    }
+
+    // Theme Toggle Handling
     function initTheme() {
       const savedTheme = localStorage.getItem('academic-theme');
       if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
-        updateButtonText(savedTheme);
+        updateThemeButton(savedTheme);
       }
     }
 
@@ -540,7 +661,6 @@
       const current = document.documentElement.getAttribute('data-theme');
       let next = 'light';
       if (!current) {
-        // if auto/unset, check system prefers
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         next = prefersDark ? 'light' : 'dark';
       } else if (current === 'light') {
@@ -550,16 +670,18 @@
       }
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('academic-theme', next);
-      updateButtonText(next);
+      updateThemeButton(next);
     }
 
-    function updateButtonText(theme) {
+    function updateThemeButton(theme) {
       const btn = document.getElementById('themeToggle');
       if (btn) {
         btn.textContent = 'Theme: ' + (theme === 'dark' ? 'Dark' : 'Light');
       }
     }
 
+    // Initialize state
+    initLanguage();
     initTheme();
   </script>
 </body>

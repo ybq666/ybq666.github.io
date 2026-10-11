@@ -1,6 +1,6 @@
-# Boquan Yao (姚博全) - Academic Homepage
+# Baiquan Yao (姚柏全) - Academic Homepage
 
-This is the personal academic homepage for **Boquan Yao (姚博全)**, hosted on GitHub Pages:
+This is the personal academic homepage for **Baiquan Yao (姚柏全)**, hosted on GitHub Pages:
 👉 **[https://ybq666.github.io](https://ybq666.github.io)**
 
 Designed specifically for **OpenReview registration**, conference submissions, and academic profile verification.
@@ -15,7 +15,7 @@ Designed specifically for **OpenReview registration**, conference submissions, a
 
 ### 2. 修改个人基本信息与学术机构
 - 打开 `index.html`：
-  - 搜索 `Boquan Yao` 或 `姚博全`：修改中英文姓名。
+  - 搜索 `Baiquan Yao` 或 `姚柏全`：修改中英文姓名。
   - 搜索 `Nanjing University` / `南京大学`：修改为你所在的大学、院系或实验室。
   - 搜索 `bqyao@smail.nju.edu.cn`：修改为你在 OpenReview 上注册填写的官方学术邮箱（.edu 邮箱）。
 
